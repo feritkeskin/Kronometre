@@ -1,18 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black_background"
     tools:context=".MainActivity">
 
-    <TextView
+    <Chronometer
+        android:id="@+id/kronometre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="60dp"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textColor="@color/white_background"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageStart"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_background"
+        app:layout_constraintBottom_toTopOf="@+id/imageReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/kronometre"
+        app:srcCompat="@drawable/start" />
+
+    <ImageView
+        android:id="@+id/imagePause"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_background"
+        app:layout_constraintBottom_toTopOf="@+id/imageReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/kronometre"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pause" />
+
+    <ImageView
+        android:id="@+id/imageReset"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageStart"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageStart"
+        app:layout_constraintTop_toBottomOf="@+id/imageStart"
+        app:srcCompat="@drawable/reset" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="173dp"
+        android:layout_height="84dp"
+        android:background="@drawable/button_background"
+        android:text="Başlat"
+        android:visibility="visible"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageStart"
+        app:layout_constraintEnd_toEndOf="@+id/imageStart"
+        app:layout_constraintStart_toStartOf="@+id/imageStart"
+        app:layout_constraintTop_toTopOf="@+id/imageStart" />
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="173dp"
+        android:layout_height="84dp"
+        android:background="@drawable/button_background"
+        android:text="Duraklat"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageStart"
+        app:layout_constraintEnd_toEndOf="@+id/imageStart"
+        app:layout_constraintStart_toStartOf="@+id/imageStart"
+        app:layout_constraintTop_toTopOf="@+id/imageStart" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="80dp"
+        android:layout_height="39dp"
+        android:background="@drawable/button_background"
+        android:text="Sıfırla "
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageReset"
+        app:layout_constraintEnd_toEndOf="@+id/imageReset"
+        app:layout_constraintStart_toStartOf="@+id/imageReset"
+        app:layout_constraintTop_toTopOf="@+id/imageReset" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
