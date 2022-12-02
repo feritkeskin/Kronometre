@@ -9,7 +9,7 @@ import com.feritkeskin.kronometre.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    var stopTime : Long = 0
+    var stopTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnPause.setOnClickListener {
-            stopTime = binding.kronometre.base-SystemClock.elapsedRealtime()
+            stopTime = binding.kronometre.base - SystemClock.elapsedRealtime()
             binding.kronometre.stop()
             binding.btnStart.visibility = View.VISIBLE
             binding.btnPause.visibility = View.GONE
